@@ -15,6 +15,7 @@ export class ProductsRepository {
 
   private _buildProductEntity(product: ProductRecord) {
     const productEntity = new Product();
+    productEntity.product_uuid = product.product_uuid;
     productEntity.product_name = product.product_name;
     productEntity.product_description = product.product_description;
     productEntity.product_price = product.product_price;
