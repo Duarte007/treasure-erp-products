@@ -5,8 +5,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { Product } from '../../products/entities/product.entity';
 import { BaseEntity } from './base.entity';
-import { Product } from './product.entity';
 
 @Entity({ name: 'stock' })
 export class Stock extends BaseEntity {
@@ -18,12 +18,6 @@ export class Stock extends BaseEntity {
 
   @Column()
   quantity: number;
-
-  @Column({ default: () => 'CURRENT_TIMESTAMP' })
-  created_at: Date;
-
-  @Column({ default: () => 'CURRENT_TIMESTAMP' })
-  updated_at: Date;
 
   @ManyToOne(() => Product, (product) => product.stock)
   @JoinColumn({ name: 'product_id' })

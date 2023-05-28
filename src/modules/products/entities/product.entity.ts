@@ -5,8 +5,8 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { Stock } from '../../stock/entities/stock.entity';
 import { BaseEntity } from './base.entity';
-import { Stock } from './stock.entity';
 
 @Entity({ name: 'products' })
 export class Product extends BaseEntity {

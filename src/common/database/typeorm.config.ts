@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from '@nestjs/typeorm';
 import { Product } from '../../modules/products/entities/product.entity';
-import { Stock } from '../../modules/products/entities/stock.entity';
+import { Stock } from '../../modules/stock/entities/stock.entity';
 
 const DATABASE_ENTITIES = [Product, Stock];
 

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Product } from '../../modules/products/entities/product.entity';
-import { Stock } from '../../modules/products/entities/stock.entity';
+import { Stock } from '../../modules/stock/entities/stock.entity';
 import { DataBaseConnectionService } from './typeorm.config';
 
 const DATABASE_ENTITIES = [Product, Stock];

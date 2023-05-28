@@ -1,16 +1,14 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { EntityManager, Repository } from 'typeorm';
+import { Stock } from '../../stock/entities/stock.entity';
 import { Product, ProductRecord } from '../entities/product.entity';
-import { Stock } from '../entities/stock.entity';
 
 @Injectable()
 export class ProductsRepository {
   constructor(
     @InjectRepository(Product)
     private productRepository: Repository<Product>,
-    @InjectRepository(Product)
-    private stockRepository: Repository<Stock>,
   ) {}
 
   private _buildProductEntity(product: ProductRecord) {
