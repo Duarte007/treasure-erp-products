@@ -27,6 +27,11 @@ export class ProductsController {
     return this.productsService.findAll();
   }
 
+  @Get(':uuid')
+  findOneByUUID(@Param('uuid') uuid: string) {
+    return this.productsService.findOneByUUID(uuid);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.productsService.findOne(+id);

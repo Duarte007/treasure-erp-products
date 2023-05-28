@@ -46,4 +46,11 @@ export class ProductsRepository {
   async findAll(): Promise<Product[]> {
     return this.productRepository.find();
   }
+
+  async findOneByUUID(product_uuid: string): Promise<Product> {
+    return this.productRepository.findOne({
+      where: { product_uuid },
+      relations: ['stock'],
+    });
+  }
 }

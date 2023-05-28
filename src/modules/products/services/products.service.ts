@@ -18,6 +18,10 @@ export class ProductsService {
     return this.productsRepository.findAll();
   }
 
+  async findOneByUUID(uuid: string) {
+    return this.productsRepository.findOneByUUID(uuid);
+  }
+
   findOne(id: number) {
     return `This action returns a #${id} product`;
   }
